@@ -288,3 +288,11 @@ select name from students MINUS select name from contacts;
 TRUNCATE TABLE Candidates;
 
 -- Aggregate functions : AVG(), COUNT(), MIN(), MAX(), SUM(), FIRST(), LSAT() [all ignore null values except COUNT]
+
+-- swap gender
+# Write your MySQL query statement below
+UPDATE salary set sex = 
+CASE sex
+    WHEN 'm' then 'f'
+    ELSE 'm'
+END;
