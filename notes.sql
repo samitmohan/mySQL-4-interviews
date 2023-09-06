@@ -296,3 +296,6 @@ CASE sex
     WHEN 'm' then 'f'
     ELSE 'm'
 END;
+
+-- make sure first letter is capital and rest is small. aLice = Alice
+select user_id, concat(upper(substr(name, 1, 1)), lower(substr(name, 2, length(name)))) as name from users order by user_id;
