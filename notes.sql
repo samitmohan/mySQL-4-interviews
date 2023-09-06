@@ -299,3 +299,9 @@ END;
 
 -- make sure first letter is capital and rest is small. aLice = Alice
 select user_id, concat(upper(substr(name, 1, 1)), lower(substr(name, 2, length(name)))) as name from users order by user_id;
+
+-- joins example (filter out people who have less balance)
+-- join the Users and Transactions tables based on the account number and then calculate the sum of the amounts for each user.
+-- We can then filter the result to include only those users whose balance is higher than 10000.
+select u.name, sum(t.amount) as balance from users u JOIN transactions t 
+on u.account = t.account group by u.name having balance > 10000
